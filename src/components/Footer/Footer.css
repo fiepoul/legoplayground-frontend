@@ -1,0 +1,9 @@
+.footer {
+    background-color: var(--lego-purple);
+    color: var(--lego-yellow);
+    text-align: center;
+    padding: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }

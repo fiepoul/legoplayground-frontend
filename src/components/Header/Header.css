@@ -1,0 +1,10 @@
+.header {
+    background-color: var(--lego-purple);
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .header h1 {
+    color: var(--lego-yellow);
+    font-size: 3rem;
+  }

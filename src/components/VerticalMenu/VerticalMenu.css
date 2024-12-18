@@ -1,0 +1,26 @@
+.vertical-menu {
+    position: fixed;
+    top: 20%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 80px;
+    background-color: var(--lego-purple);
+    color: var(--lego-white);
+    padding: 10px;
+    border-radius: 100px 0 0 100px;
+  }
+  
+  .vertical-menu a {
+    display: block;
+    padding: 15px;
+    color: var(--lego-yellow);
+    text-decoration: none;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: var(--lego-lime);
+    color: var(--lego-purple);
+  }

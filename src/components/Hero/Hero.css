@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.hero {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 60%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+  font-family: 'Doto', sans-serif;
+  color: var(--lego-purple);
+  font-size: 3rem;
+  margin-bottom: 20px; 
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: var(--lego-purple);
+}
+
+.upload-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.upload-section h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300 light;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.image-preview {
+  margin-top: 20px;
+}
+
+.preview-img {
+  max-width: 400px;
+  max-height: 400px; 
+  height: auto;
+  border: 2px solid #663399; /* Matcher din hero-farve */
+  border-radius: 10px;
+}
+
+.result-display {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.8); /* Matcher Hero baggrund */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 60%; /* Matcher Hero bredde */
+  margin: 0 auto; /* Center indholdet */
+}
+
+.result-card h2 {
+  font-family: 'Doto', sans-serif;
+  color: var(--lego-purple); /* Brug samme farve som Hero */
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.result-card p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  color: var(--lego-purple);
+}

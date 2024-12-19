@@ -2,7 +2,7 @@ import React from 'react';
 import './Modal.css';
 
 const ImagePreviewModal = ({ imagePreview, onConfirm, onCancel }) => {
-  if (!imagePreview) return null; // Skjul modal, hvis der ikke er noget billede
+  if (!imagePreview) return null;
 
   return (
     <div className="modal-overlay">

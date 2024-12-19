@@ -1,21 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+  --lego-purple: #663399; /* Definer LEGO lilla som standard */
+}
+
 .hero-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
+  padding: 20px; /* Giver luft omkring */
 }
 
 .hero {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
   border-radius: 15px;
   text-align: center;
-  width: 60%; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%; 
+  max-width: 1200px; /* Gør det responsivt */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px; /* Giver afstand til resultater */
 }
 
 .hero h2 {
@@ -28,6 +36,7 @@
 .hero p {
   font-size: 1.5rem;
   color: var(--lego-purple);
+  margin-bottom: 20px; /* Giver afstand til upload-sektionen */
 }
 
 .upload-section {
@@ -38,9 +47,8 @@
 .upload-section h2 {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
-  font-weight: 300 light;
-  margin-top: 20px;
-  text-align: center;
+  font-weight: 300;
+  margin-bottom: 20px;
 }
 
 .image-preview {
@@ -51,33 +59,87 @@
   max-width: 400px;
   max-height: 400px; 
   height: auto;
-  border: 2px solid #663399; /* Matcher din hero-farve */
+  border: 2px solid var(--lego-purple);
   border-radius: 10px;
 }
 
-.result-display {
+/* Resultater - Layout side-by-side */
+.results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Giver luft mellem elementerne */
+  margin-top: 30px;
+}
+
+.back-button {
+  background-color: #663399; /* LEGO-inspireret lilla */
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+  background-color: #522b73; /* Mørkere lilla ved hover */
+}
+
+/* LEGO Pieces List */
+.hero-list {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  width: 48%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-list h2 {
+  font-family: 'Doto', sans-serif;
+  color: var(--lego-purple);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.result-card {
-  background: rgba(255, 255, 255, 0.8); /* Matcher Hero baggrund */
+.hero-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hero-list li {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  padding: 5px;
+  color: var(--lego-purple);
+  border-bottom: 1px solid #ddd;
+}
+
+/* LEGO Recipe */
+.hero-recipe {
+  background: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 15px;
+  width: 48%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 60%; /* Matcher Hero bredde */
-  margin: 0 auto; /* Center indholdet */
 }
 
-.result-card h2 {
+.hero-recipe h2 {
   font-family: 'Doto', sans-serif;
-  color: var(--lego-purple); /* Brug samme farve som Hero */
-  font-size: 2rem;
-  margin-bottom: 10px;
+  color: var(--lego-purple);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.result-card p {
+.hero-recipe p {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
   color: var(--lego-purple);
+  line-height: 1.6;
+  text-align: left;
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Hero.css';
 import ImagePreviewModal from './ImagePreviewModal';
 
-const ImageUpload = () => {
+const ImageUpload = ({ handleUploadResult, handleGenerateIdeas }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [uploadStatus, setUploadStatus] = useState('');
@@ -32,6 +32,7 @@ const ImageUpload = () => {
 
       if (response.ok) {
         setUploadStatus('Image uploaded successfully!');
+        handleGenerateIdeas(selectedImage); // Kalder funktionen med billedet
       } else {
         setUploadStatus('Failed to upload image. Please try again.');
       }
@@ -69,3 +70,4 @@ const ImageUpload = () => {
 };
 
 export default ImageUpload;
+

@@ -16,12 +16,18 @@ function App() {
   };
 
   // Funktion til at generere idéer fra bricks
-  const handleGenerateIdeas = async (bricks) => {
+  const handleGenerateIdeas = async (file) => {
     try {
-      const response = await axios.post('http://localhost:8080/api/lego/ideas', {
-        bricks,
+      const formData = new FormData();
+      formData.append('image', file);
+  
+      const response = await axios.post('http://localhost:8080/api/lego/ideas', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
-      setIdeas(response.data);
+  
+      setIdeas(response.data); // Gem idéerne i state
     } catch (error) {
       console.error('Error generating LEGO ideas:', error);
     }

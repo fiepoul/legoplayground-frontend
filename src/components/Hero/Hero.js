@@ -13,7 +13,8 @@ const Hero = ({ handleUploadResult, uploadResult, handleGenerateIdeas, ideas }) 
           here to help you be creative - Let's see what you can make! 
           Upload your LEGO image to get ideas!
         </p>
-        <ImageUpload handleUploadResult={handleUploadResult} />
+        <ImageUpload handleUploadResult={handleUploadResult} 
+        handleGenerateIdeas={handleGenerateIdeas}/>
         <ResultDisplay results={uploadResult || ideas} />
       </div>
     </div>

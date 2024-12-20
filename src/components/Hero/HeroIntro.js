@@ -12,8 +12,9 @@ const HeroIntro = ({
       <div className="hero">
         <h2>BUILD WITH ME</h2>
         <p>
-          Reimagine, rebuild, and create with your brick leftovers. LEGObot is
-          here to help you be creative - Let's see what you can make! 
+          Reimagine, rebuild, and create with your brick leftovers. <br />
+          LEGObot is here to help you be creative <br />
+          - Let's see what you can make! <br />
           Upload your LEGO image to get ideas!
         </p>
         

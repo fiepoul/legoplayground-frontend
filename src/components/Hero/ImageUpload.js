@@ -41,7 +41,7 @@ const ImageUpload = ({ handleGenerateIdeas, handleUploadResult }) => {
     <div className="upload-section">
       <h2>Upload your LEGO Image!</h2>
       <label htmlFor="file-upload" className="blue-button">
-        Choose File
+        Select File
       </label>
       <input
         type="file"

@@ -12,7 +12,9 @@
   align-items: center;
   height: 100vh;
   width: 100%;
-  padding: 20px; /* Giver luft omkring */
+  padding: 10px 200px; /* Giver luft omkring */
+  margin-top: -90px;
+  box-sizing: border-box;
 }
 
 .hero {
@@ -31,12 +33,13 @@
   color: var(--lego-purple);
   font-size: 3rem;
   margin-bottom: 20px; 
+  margin-top: -5px
 }
 
 .hero p {
   font-size: 1.5rem;
   color: var(--lego-purple);
-  margin-bottom: 20px; /* Giver afstand til upload-sektionen */
+  margin-bottom: 30px; /* Giver afstand til upload-sektionen */
 }
 
 .upload-section {
@@ -48,7 +51,7 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .image-preview {
@@ -146,7 +149,7 @@
 
 .blue-button {
   background-color: #4e95ac; /* Lysseblå */
-  color: #ffffff; /* Hvid tekst */
+  color: #090505; /* Hvid tekst */
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
@@ -159,6 +162,7 @@
 
 .blue-button:hover {
   background-color: #1a4758; /* Mørkere blå på hover */
+  color: #e6e0e0;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 

@@ -143,3 +143,32 @@
   line-height: 1.6;
   text-align: left;
 }
+
+.blue-button {
+  background-color: #4e95ac; /* Lysseblå */
+  color: #ffffff; /* Hvid tekst */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Doto', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blue-button:hover {
+  background-color: #1a4758; /* Mørkere blå på hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.blue-button:active {
+  background-color: #4682b4; /* Endnu mørkere blå ved klik */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blue-button:disabled {
+  background-color: #d3d3d3; /* Grå for disabled */
+  cursor: not-allowed;
+  box-shadow: none;
+}

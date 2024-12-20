@@ -40,9 +40,16 @@ const ImageUpload = ({ handleGenerateIdeas, handleUploadResult }) => {
   return (
     <div className="upload-section">
       <h2>Upload your LEGO Image!</h2>
-      <form>
-        <input type="file" accept="image/*" onChange={handleImageChange} />
-      </form>
+      <label htmlFor="file-upload" className="blue-button">
+        Choose File
+      </label>
+      <input
+        type="file"
+        id="file-upload"
+        accept="image/*"
+        onChange={handleImageChange}
+        style={{ display: 'none' }} // Skjul standard input
+      />
       {uploadStatus && <p className="upload-status">{uploadStatus}</p>}
 
       <ImagePreviewModal

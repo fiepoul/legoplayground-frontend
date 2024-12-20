@@ -7,11 +7,18 @@ const ImagePreviewModal = ({ imagePreview, onConfirm, onCancel }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>Preview Image</h2>
+        <button className="close-button" onClick={onCancel}>
+          &times;
+        </button>
+        <h2>PREVIEW</h2>
         <img src={imagePreview} alt="Preview" className="modal-image" />
         <div className="modal-buttons">
-          <button onClick={onConfirm}>Confirm</button>
-          <button onClick={onCancel}>Cancel</button>
+          <button onClick={onConfirm} className="upload-button">
+            Upload
+          </button>
+          <button onClick={onCancel} className="secondary-button">
+            Select New
+          </button>
         </div>
       </div>
     </div>

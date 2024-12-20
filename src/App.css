@@ -16,16 +16,19 @@ body {
   background-position: center;
 }
 
-/* Resultater - Layout side-by-side */
 .results-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px; /* Giver luft mellem elementerne */
+  flex-direction: row; 
+  justify-content: space-between; /* Lige meget plads mellem kolonnerne */
+  align-items: flex-start; /* Justér til toppen */
+  gap: 20px; /* Luft mellem kolonnerne */
   margin-top: 30px;
+  padding: 0 20px; /* Indrykning fra kanterne */
+  width: 100%; /* Fyld hele bredden */
+  max-width: 1200px; /* Responsivt design */
+  margin: 0 auto; /* Centrer containeren */
+  box-sizing: border-box; /* Inkludér padding og border i bredden */
 }
-
-
 
 
 

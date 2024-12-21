@@ -1,5 +1,5 @@
 import React from 'react';
-import './Hero.css';
+import './Results.css';
 
 const HeroLegoList = ({ legoList }) => {
   if (!legoList || legoList.length === 0) {

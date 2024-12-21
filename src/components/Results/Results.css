@@ -1,0 +1,84 @@
+/* To kolonner ved siden af hinanden */
+.results-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  width: 90%; /* Begræns bredden */
+  max-width: 1200px;
+}
+
+/* Kolonnerne */
+.results-column {
+  flex: 1;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+}
+
+.results-column h2 {
+  font-family: 'Doto', sans-serif;
+  color: var(--lego-purple);
+  text-align: center;
+}
+
+.results-column ul, .results-column ol {
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.results-column li {
+  font-size: 1.2rem;
+  color: var(--lego-purple);
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Knapper inde i kolonner */
+/* Wrapper for knapperne */
+.column-actions {
+  display: flex;
+  justify-content: center; /* Centrerer knapperne */
+  gap: 40px; /* Mellemrum mellem knapper */
+  margin-top: 20px; /* Giver afstand til andre elementer */
+}
+
+/* Knap-styling */
+.button {
+  background-color: #4e95ac; /* Lysseblå farve */
+  color: white; /* Hvid tekst */
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lækker skygge */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #1a4758; /* Mørkere blå ved hover */
+  transform: scale(1.05); /* Lidt større ved hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button:active {
+  background-color: #4682b4; /* Endnu mørkere blå ved klik */
+  transform: scale(0.98); /* Lidt mindre ved klik */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Ekstra sektioner */
+.feature {
+  text-align: center;
+  color: var(--lego-purple);
+}
+
+@media (max-width: 768px) {
+  .results-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -3,45 +3,41 @@ import axios from 'axios';
 import './App.css';
 import Header from './components/Header/Header';
 import HeroIntro from './components/Hero/HeroIntro';
+import Results from './components/Results/Results';
 import VerticalMenu from './components/VerticalMenu/VerticalMenu';
 import Footer from './components/Footer/Footer';
-import HeroLegoList from './components/Hero/HeroLegoList';
-import HeroRecipe from './components/Hero/HeroRecipe';
 
 function App() {
   const [legoList, setLegoList] = useState([]);
   const [recipe, setRecipe] = useState('');
   const [uploadResult, setUploadResult] = useState('');
-  const [showIntro, setShowIntro] = useState(true); // Ny state for at styre visningen af HeroIntro
+  const [showIntro, setShowIntro] = useState(true);
 
   const handleUploadResult = (result) => {
     setUploadResult(result);
-    setShowIntro(false); // Skjul intro containeren, når billedet er uploadet
+    setShowIntro(false);
   };
 
   const handleGenerateIdeas = async (file) => {
     try {
       const formData = new FormData();
       formData.append('image', file);
-  
-      const response = await axios.post('http://localhost:8080/api/lego/ideas', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+
+      const { data } = await axios.post('http://localhost:8080/api/lego/ideas', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
       });
-  
-      const { legoList, recipe } = response.data;
-      setLegoList(legoList);
-      setRecipe(recipe);
+
+      setLegoList(data.legoList || []);
+      setRecipe(data.recipe || '');
     } catch (error) {
       console.error('Error generating LEGO ideas:', error);
     }
   };
 
   const handleBackToIntro = () => {
-    setShowIntro(true); // Gå tilbage til intro containeren
-    setLegoList([]); // Ryd listen
-    setRecipe(''); // Ryd opskriften
+    setShowIntro(true);
+    setLegoList([]);
+    setRecipe('');
     setUploadResult('');
   };
 
@@ -50,19 +46,17 @@ function App() {
       <Header />
       <VerticalMenu />
       {showIntro ? (
-        <HeroIntro 
-          handleUploadResult={handleUploadResult} 
-          handleGenerateIdeas={handleGenerateIdeas} 
-          uploadResult={uploadResult} 
+        <HeroIntro
+          handleUploadResult={handleUploadResult}
+          handleGenerateIdeas={handleGenerateIdeas}
+          uploadResult={uploadResult}
         />
       ) : (
-        <div className="results-container">
-          <HeroLegoList legoList={legoList} />
-          <HeroRecipe recipe={recipe} />
-          <button onClick={handleBackToIntro} className="back-button">
-            Back to Upload
-          </button>
-        </div>
+        <Results
+          legoList={legoList}
+          recipe={recipe || { description: '', steps: [] }}
+          onBack={handleBackToIntro}
+        />
       )}
       <Footer />
     </div>

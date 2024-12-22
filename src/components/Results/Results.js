@@ -52,7 +52,7 @@ const Results = ({ legoList = [], recipe = '', onBack }) => {
             ))}
           </ol>
           <div className="column-actions">
-            <button onClick={onBack} className="button">Back to Upload</button>
+            <button onClick={onBack} className="button">New Upload</button>
             <button onClick={handleDownloadPDF} className="button">Download as PDF</button>
           </div>
         </div>

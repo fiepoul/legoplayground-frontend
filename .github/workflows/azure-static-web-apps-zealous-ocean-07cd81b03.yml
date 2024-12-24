@@ -43,7 +43,7 @@ jobs:
           api_location: "" # API source code path - optional
           output_location: "build" # Path to the built app's output directory
           github_id_token: ${{ secrets.GITHUB_TOKEN }}
-          ###### End of Repository/Build Configurations ######
+          ###### End of Repository/Build Configurations ###### 
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

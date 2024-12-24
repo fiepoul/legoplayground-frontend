@@ -40,7 +40,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           app_location: "public" # App source code path
-          api_location: "" # API source code path - optional
+          # api_location: "" # API source code path - optional
           output_location: "build" # Path to the built app's output directory
           github_id_token: ${{ secrets.GITHUB_TOKEN }}
           ###### End of Repository/Build Configurations ######

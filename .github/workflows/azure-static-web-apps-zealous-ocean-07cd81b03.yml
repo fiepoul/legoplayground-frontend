@@ -39,11 +39,10 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ZEALOUS_OCEAN_07CD81B03 }}
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "lego-frontend-app/" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "build" # Built app content directory - optional
-          github_id_token: ${{ steps.idtoken.outputs.result }}
+          api_location: "" # API source code path - optional
+          output_location: "lego-frontend-app/build" # Path to the built app's output directory
+          github_id_token: ${{ secrets.GITHUB_TOKEN }}
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
@@ -51,4 +50,5 @@ jobs:
     runs-on: ubuntu-latest
     name: Close Pull Request Job
     steps:
-      - name: Close Pull Request
+      - name: Notify Pull Request Closed
+        run: echo "Pull Request has been closed."

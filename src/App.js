@@ -23,7 +23,7 @@ function App() {
       const formData = new FormData();
       formData.append('image', file);
 
-      const { data } = await axios.post('lego-assistant-backend-fge3cnabetgmc6ep.westeurope-01.azurewebsites.net/api/lego/ideas', formData, {
+      const { data } = await axios.post('https://lego-assistant-backend-fge3cnabetgmc6ep.westeurope-01.azurewebsites.net/api/lego/ideas', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 

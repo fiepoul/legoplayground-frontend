@@ -23,9 +23,13 @@ function App() {
       const formData = new FormData();
       formData.append('image', file);
 
-      const { data } = await axios.post('https://lego-assistant-backend-fge3cnabetgmc6ep.westeurope-01.azurewebsites.net/api/lego/ideas', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
+      const { data } = await axios.post(
+        'https://lego-assistant-backend-fge3cnabetgmc6ep.westeurope-01.azurewebsites.net/api/lego/ideas',
+        formData,
+        {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        }
+      );
 
       setLegoList(data.legoList || []);
       setRecipe(data.recipe || '');
@@ -43,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header handleBackToIntro={handleBackToIntro} />
       <VerticalMenu />
       {showIntro ? (
         <HeroIntro
@@ -64,6 +68,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 

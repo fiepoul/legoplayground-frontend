@@ -1,9 +1,13 @@
 import React from 'react';
 import './Header.css';
 
-const Header = () => (
+const Header = ({ handleBackToIntro }) => (
   <header className="header">
-    <h1>LEGO PLAYGROUND</h1>
+    <h1>
+      <span className="header-text" onClick={handleBackToIntro}>
+        LEGO PLAYGROUND
+      </span>
+    </h1>
   </header>
 );
 

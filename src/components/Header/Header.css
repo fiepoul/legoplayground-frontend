@@ -1,10 +1,20 @@
 .header {
-    background-color: var(--lego-purple);
-    padding: 20px;
-    text-align: left;
-  }
+  background-color: var(--lego-purple);
+  padding: 20px;
+  text-align: left;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header-text {
+  color: var(--lego-yellow);
+  font-size: 3rem;
+  cursor: pointer; /* Kun teksten er klikbar */
+}
+
+.header-text:hover {
+  text-decoration: none; /* Understregning på hover */
+}
   
-  .header h1 {
-    color: var(--lego-yellow);
-    font-size: 3rem;
-  }

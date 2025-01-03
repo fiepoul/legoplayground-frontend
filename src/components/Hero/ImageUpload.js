@@ -22,7 +22,7 @@ const ImageUpload = ({ handleGenerateIdeas, handleUploadResult }) => {
       setUploadStatus('Uploading...');
       await handleGenerateIdeas(selectedImage); // Venter på, at idéerne genereres
       setUploadStatus('Image uploaded successfully!');
-      handleUploadResult('Image uploaded successfully!'); // Opdater `uploadResult`
+      handleUploadResult('Image uploaded successfully!'); 
     } catch (error) {
       console.error('Error uploading image:', error);
       setUploadStatus('An error occurred. Please try again.');
@@ -50,12 +50,12 @@ const ImageUpload = ({ handleGenerateIdeas, handleUploadResult }) => {
         onChange={handleImageChange}
         style={{ display: 'none' }} // Skjul standard input
       />
-      {uploadStatus && <p className="upload-status">{uploadStatus}</p>}
 
       <ImagePreviewModal
         imagePreview={imagePreview}
         onConfirm={handleConfirm}
         onCancel={handleCancel}
+        uploadStatus={uploadStatus}
       />
     </div>
   );

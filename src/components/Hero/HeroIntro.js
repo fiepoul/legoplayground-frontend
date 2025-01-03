@@ -20,10 +20,8 @@ const HeroIntro = ({
         
         <ImageUpload 
           handleUploadResult={handleUploadResult} 
-          handleGenerateIdeas={handleGenerateIdeas} 
+          handleGenerateIdeas={handleGenerateIdeas}
         />
-        
-        {uploadResult && <p className="upload-result">{uploadResult}</p>}
       </div>
     </div>
   );

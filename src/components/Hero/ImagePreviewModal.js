@@ -11,8 +11,8 @@ const ImagePreviewModal = ({ imagePreview, uploadStatus, onConfirm, onCancel }) 
           &times;
         </button>
         <h2>PREVIEW</h2>
+        {uploadStatus && <p className="upload-status">{uploadStatus}</p>}
         <img src={imagePreview} alt="Preview" className="modal-image" />
-        {uploadStatus && <p>{uploadStatus}</p>}
         <div className="modal-buttons">
           <button onClick={onConfirm} className="upload-button">
             Upload

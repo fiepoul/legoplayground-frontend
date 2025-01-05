@@ -12,29 +12,32 @@ const ImageUpload = ({ handleGenerateIdeas, handleUploadResult }) => {
       const file = event.target.files[0];
       setSelectedImage(file);
       setImagePreview(URL.createObjectURL(file));
+      setUploadStatus(''); 
     }
   };
 
   const handleConfirm = async () => {
     if (!selectedImage) return;
-
+  
     try {
       setUploadStatus('Uploading...');
-      await handleGenerateIdeas(selectedImage); // Venter på, at idéerne genereres
+      await handleGenerateIdeas(selectedImage); 
       setUploadStatus('Image uploaded successfully!');
-      handleUploadResult('Image uploaded successfully!'); 
-    } catch (error) {
-      console.error('Error uploading image:', error);
-      setUploadStatus('An error occurred. Please try again.');
-    } finally {
+      handleUploadResult('Image uploaded successfully!');
+     
       setImagePreview(null);
       setSelectedImage(null);
+    } catch (error) {
+      console.error('Error uploading image:', error);
+      // Behold modal åben og vis fejlmeddelelse
+      setUploadStatus('An error occurred while uploading your image. Please try again.');
     }
   };
 
   const handleCancel = () => {
-    setImagePreview(null);
     setSelectedImage(null);
+    setImagePreview(null); 
+    setUploadStatus(''); 
   };
 
   return (
